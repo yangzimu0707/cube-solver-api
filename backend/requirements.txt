@@ -1,0 +1,5 @@
+Flask==3.0.3
+flask-cors==4.0.1
+kociemba==1.2.1
+pytwisty==0.0.1
+gunicorn==23.0.0
