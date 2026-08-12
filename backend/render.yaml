@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: cube-solver-api
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -w 2 -b 0.0.0.0:10000 --timeout 120 app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      # DeepSeek API Key，在 Render 面板 Environment 里手动填写（不要提交真实 Key 到 GitHub）
+      - key: DEEPSEEK_API_KEY
+        sync: false
